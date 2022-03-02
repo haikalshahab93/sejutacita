@@ -14,7 +14,11 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "three": "^0.138.0",
+<<<<<<< HEAD
     "web-vitals": "^2.1.4",
+=======
+    "web-vitals": "^2.1.4"
+>>>>>>> 70637fd12988c8d70a9d8c5b0b12b3772f769d24
     "homepage": "https://haikalshahab93.github.io/sejutacita"
   },
   "scripts": {
