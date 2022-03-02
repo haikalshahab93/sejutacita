@@ -1,25 +1,25 @@
 import React, { createContext } from 'react';
-// import { usePokemonReducer } from './usePokemonReducer';
-// import { CAPTURE, RELEASE, ADD_POKEMON, ADD_POKEMONS } from './actions';
+import { useBookReducer } from './useBookReducer';
+import { CAPTURE, RELEASE, ADD_BOOK, ADD_BOOKS } from './actions';
 
 const BookContext = createContext();
 
 const BookProvider = (props) => {
-//   const [state, dispatch] = usePokemonReducer();
-//   const { pokemons, capturedPokemons } = state;
+  const [state, dispatch] = useBookReducer();
+  const { books, capturedBooks } = state;
 
-//   const capture = (pokemon) => () => dispatch({ type: CAPTURE, pokemon });
-//   const release = (pokemon) => () => dispatch({ type: RELEASE, pokemon });
-//   const addPokemon = (pokemon) => dispatch({ type: ADD_POKEMON, pokemon });
-//   const addPokemons = (pokemons) => dispatch({ type: ADD_POKEMONS, pokemons });
+  const capture = (book) => () => dispatch({ type: CAPTURE, book });
+  const release = (book) => () => dispatch({ type: RELEASE, book });
+  const addBook = (book) => dispatch({ type: ADD_BOOK, book });
+  const addBooks = (books) => dispatch({ type: ADD_BOOKS, books });
 
   const providerValue = {
-    // pokemons,
-    // capturedPokemons,
-    // capture,
-    // release,
-    // addPokemon,
-    // addPokemons,
+    books,
+    capturedBooks,
+    capture,
+    release,
+    addBook,
+    addBooks,
   };
 
   return (
