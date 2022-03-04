@@ -1,0 +1,5 @@
+permasalahan nya permintaan penarikan data api dari frontend ditolak karena tidak adanya cors nya sehingga dianggap tidak mempunyai akses.
+
+
+mengatasinya hanya perlu menambahkan cors pada sisi server backendnya sehingga aksesnya bisa diterima oleh frontend untuk di olah
+
