@@ -1,8 +1,10 @@
 import { useReducer } from 'react';
-import { CAPTURE, RELEASE, ADD_BOOK, ADD_BOOKS } from './actions';
+import { CAPTURE, RELEASE, ADD_BOOK, ADD_BOOKS,ADD_CATEGORIES,SEARCH } from './actions';
 
 const getCapturedBooks = (capturedBooks, releasedBook) =>
   capturedBooks.filter((book) => book !== releasedBook);
+
+  
 
 const releaseBook = (releasedBook, state) => ({
   books: [...state.books, releasedBook],
@@ -11,6 +13,13 @@ const releaseBook = (releasedBook, state) => ({
     releasedBook
   ),
 });
+
+const searchBook = (keyword, state) => ({
+  books : getSearch(state.books,keyword),
+}
+);
+
+const getSearch = (keyword , books) =>keyword.filter((x)=> keyword.toLowerCase() == books.title.toLowerCase())
 
 const getBooksList = (books, capturedBook) =>
   books.filter((book) => book !== capturedBook);
@@ -30,6 +39,12 @@ const addBooks = (books, state) => ({
   capturedBooks: state.capturedBooks,
 });
 
+const addCategories = (categories, state) => ({
+  categories: categories,
+});
+
+
+
 const bookReducer = (state, action) => {
   switch (action.type) {  
     case CAPTURE:
@@ -40,6 +55,10 @@ const bookReducer = (state, action) => {
       return addBook(action.book, state);
     case ADD_BOOKS:
       return addBooks(action.books, state);
+    // case ADD_CATEGORIES:
+    //   return addCategories(action.categories, state);
+    case SEARCH:
+        return searchBook(action.keyword, state);
     default:
       return state;
   }

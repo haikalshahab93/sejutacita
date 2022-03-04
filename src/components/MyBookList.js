@@ -4,7 +4,7 @@ import { listBooks } from './listBooks';
 import { Row, Container, Col } from "react-bootstrap";
 
 const MyBookList = () => {
-  const { capturedBooks, release } = useContext(BookContext);
+  const { capturedBooks, release} = useContext(BookContext);
 
   return (
     <div className="categories">
